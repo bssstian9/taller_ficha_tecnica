@@ -1,0 +1,76 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor Cliente
+actor "Mecánico" as Mecanico
+actor Administrador
+
+Cliente --|> Usuario
+Mecanico --|> Usuario
+Administrador --|> Usuario
+
+rectangle "Sistema de Gestión de Talleres Mecánicos" {
+  usecase "Iniciar sesión" as UC1
+  usecase "Registrarse" as UC2
+
+  usecase "Registrar vehículo" as UC3
+  usecase "Consultar ficha técnica por patente" as UC4
+  usecase "Validar propiedad del vehículo\no rol autorizado" as UC4a
+  usecase "Ver estado del vehículo\nen tiempo real" as UC5
+  usecase "Ver historial de reparaciones" as UC6
+  usecase "Aprobar presupuesto" as UC7
+  usecase "Rechazar presupuesto" as UC8
+
+  usecase "Ver órdenes asignadas" as UC9
+  usecase "Registrar diagnóstico" as UC10
+  usecase "Subir foto/video de evidencia" as UC11
+  usecase "Cambiar estado a En Reparación" as UC12
+  usecase "Cambiar estado a\nEsperando Repuestos" as UC13
+  usecase "Registrar repuesto y distribuidor" as UC14
+
+  usecase "Gestionar cuentas de mecánicos" as UC15
+  usecase "Crear orden de trabajo" as UC16
+  usecase "Eliminar orden de trabajo" as UC17
+  usecase "Gestionar repuestos e inventario" as UC18
+  usecase "Gestionar distribuidores" as UC19
+  usecase "Ver panel de control global" as UC20
+}
+
+Usuario --> UC1
+Usuario --> UC2
+UC2 ..> UC1 : <<include>>
+
+Cliente --> UC3
+Cliente --> UC4
+Cliente --> UC5
+Cliente --> UC6
+Cliente --> UC7
+Cliente --> UC8
+UC4 ..> UC4a : <<include>>
+UC8 .> UC7 : <<extend>>
+
+Mecanico --> UC9
+Mecanico --> UC4
+Mecanico --> UC10
+Mecanico --> UC11
+Mecanico --> UC12
+Mecanico --> UC13
+UC10 ..> UC11 : <<include>>
+UC13 ..> UC14 : <<include>>
+
+Administrador --> UC15
+Administrador --> UC16
+Administrador --> UC17
+Administrador --> UC18
+Administrador --> UC19
+Administrador --> UC20
+Administrador --> UC6
+
+note right of UC11
+  UC9 a UC13 se ejecutan
+  principalmente desde la
+  App Móvil (Integra IV)
+end note
+
+@enduml
