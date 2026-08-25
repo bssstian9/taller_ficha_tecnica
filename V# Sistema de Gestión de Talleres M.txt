@@ -1,0 +1,18 @@
+V# Sistema de Gestión de Talleres Mecánicos - Grupo 10[cite: 1]
+
+Repositorio central para los documentos y diseños del proyecto (Taller de Integración II y IV).
+
+## Estructura de Carpetas
+
+*   **/informes**: Propuestas de idea, documentos de sistematización, reglas de negocio y PDFs finales.
+*   **/presentaciones**: Presentaciones para las defensas de los Sprints.
+*   **/diagramas**: Modelo Entidad-Relación (MER), Casos de Uso, Componentes y Arquitectura de Software.
+*   **/mockups**: Maquetas de interfaces o archivos .md con el enlace directo al diseño.
+
+## Stack Tecnológico
+*   **Backend y BD:** API REST en Python + PostgreSQL/MySQL[cite: 1].
+*   **Frontend Web (Integra II):** React[cite: 1].
+*   **Frontend Mobile (Integra IV):** React Native / Flutter[cite: 1].
+
+## Indicaciones
+Subir los archivos utilizando nombres que incluyan la versión o la fecha (ej: Propuesta_Idea_v3.pdf).
