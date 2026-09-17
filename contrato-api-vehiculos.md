@@ -2,7 +2,7 @@
 
 **Proyecto:** Sistema de Gestión de Talleres Mecánicos — Grupo 10
 **Consumido por:** `frontend/src/infrastructure/api/VehicleService.ts`
-**Fuente de reglas de negocio:** `Requerimientos.md` (RF-06 a RF-08) y `sistematizacion_final.docx` §4.1, §8
+**Fuente de reglas de negocio:** `Requerimientos.md` (RF-06 a RF-08) y `sistematizacion_final.docx` s4.1, §8
 
 Este documento describe los endpoints que el frontend ya está llamando (vía
 `VehicleService`) para el registro y consulta de vehículos. El objetivo es que
@@ -17,14 +17,14 @@ quede desplegado.
   en `apiClient.ts` vía `VITE_API_URL`).
 - El Gateway valida el JWT y enruta por prefijo de ruta; MS2 **vuelve a
   validar** el token y aplica la autorización por rol (defensa en
-  profundidad, §8).
+  profundidad, s8).
 - Header obligatorio en todos los endpoints: `Authorization: Bearer <token>`.
 - Los errores siempre se devuelven como:
   ```json
   { "detail": "mensaje legible para el usuario" }
   ```
   (es el formato que el frontend ya sabe interpretar en `errors.ts`).
-- `patent` (patente) es **única** a nivel de base de datos (§4.1). El backend
+- `patent` (patente) es **única** a nivel de base de datos (s4.1). El backend
   es la fuente de verdad; el frontend solo hace un chequeo optimista antes de
   enviar el formulario.
 
